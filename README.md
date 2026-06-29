@@ -89,7 +89,7 @@ https://user-auth-service-poyz.onrender.com/swagger-ui/index.html
 ## Getting Started
 To Run this project locally, follow below steps
 
-git clone https://github.com/tahazakir110/user-auth-service.git
+git clone https://github.com/Taha786110/user-auth-service.git
 
 cd user-auth-service
 
