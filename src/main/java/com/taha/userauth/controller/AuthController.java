@@ -10,7 +10,10 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Authentication", description = "User Registration and Login APIs")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -19,6 +22,10 @@ public class AuthController {
         this.authService = authService;
     }
 
+    @Operation(
+            summary = "Register a new user",
+            description = "Creates a new user account after validating the request and hashing the password."
+    )
     @PostMapping("/register")
     public ResponseEntity<RegisterResponse> register(@RequestBody @Valid RegisterRequest request){
         User user = authService.register(request);
@@ -28,6 +35,10 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(registerResponse);
     }
 
+    @Operation(
+            summary = "Authenticate user",
+            description = "Authenticates a registered user and returns a JWT access token."
+    )
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest request){
     String token = authService.login(request);

@@ -3,6 +3,8 @@ package com.taha.userauth.controller;
 import com.taha.userauth.dto.GetUserResponse;
 import com.taha.userauth.entity.User;
 import com.taha.userauth.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.boot.webmvc.autoconfigure.WebMvcProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "User", description = "Protected User APIs")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -19,6 +22,10 @@ public class UserController {
         this.userService = userService;
     }
 
+    @Operation(
+            summary = "Get Current User",
+            description = "Returns the profile information of the authenticated user."
+    )
     @GetMapping("/me")
     public ResponseEntity<GetUserResponse> getCurrentUser(){
         User user = userService.currentUser();
