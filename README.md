@@ -1,26 +1,37 @@
 # User Authentication Service
 
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.x-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue)
+![JWT](https://img.shields.io/badge/Auth-JWT-yellow)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+
+## Live Demo
+
+🌐 API Base URL
+
+https://user-auth-service-poyz.onrender.com
+
+📖 Swagger Documentation
+
+https://user-auth-service-poyz.onrender.com/swagger-ui/index.html
+
 ## Project Description
-A production-style RESTful authentication service built with Spring Boot and PostgreSQL. The project demonstrates secure user registration, JWT-based authentication, password hashing using BCrypt, request validation, global exception handling, and Spring Security for protecting API endpoints.
+A production-style RESTful authentication service built with Spring Boot, PostgreSQL, Docker, and JWT.
+
+The project demonstrates secure authentication using BCrypt password hashing, stateless JWT authorization, Spring Security, request validation, global exception handling, and interactive API documentation with Swagger/OpenAPI.
 
 ## Features
-✅ User Registration
-
-✅ User Login
-
-✅ BCrypt Password Hashing
-
-✅ JWT Authentication
-
-✅ Spring Security
-
-✅ Protected Endpoints
-
-✅ Request Validation
-
-✅ Global Exception Handling
-
-✅ RESTful API Design
+- User Registration
+- User Login
+- BCrypt Password Hashing
+- JWT Authentication
+- Spring Security
+- Protected REST Endpoints
+- Request Validation
+- Global Exception Handling
+- Swagger/OpenAPI Documentation
+- Dockerized Deployment
 
 ## Tech Stack
 | Technology      | Purpose                        |
@@ -32,6 +43,19 @@ A production-style RESTful authentication service built with Spring Boot and Pos
 | Spring Data JPA | ORM                            |
 | JWT             | Stateless Authentication       |
 | Maven           | Dependency Management          |
+
+## Skills Demonstrated
+- REST API Development
+- Spring Boot
+- Spring Security
+- JWT Authentication
+- Layered Architecture
+- Data Validation
+- Exception Handling
+- Docker
+- PostgreSQL
+- API Documentation (Swagger/OpenAPI)
+- Cloud Deployment
 
 ## Project Structure
 ### src
@@ -52,28 +76,24 @@ A production-style RESTful authentication service built with Spring Boot and Pos
 -> service
 
 ## API Endpoints
-### https://user-auth-service-poyz.onrender.com/auth/register
-This will be used to register a user
+| Method | Endpoint         | Description                           |
+| ------ | ---------------- | ------------------------------------- |
+| POST   | `/auth/register` | Register a new user                   |
+| POST   | `/auth/login`    | Authenticate user and receive JWT     |
+| GET    | `/user/me`       | Retrieve authenticated user's profile |
 
-### https://user-auth-service-poyz.onrender.com/auth/login
-This API will generate a JWT bearer token valid for next 1 hour.
+### Interactive API Documentation
 
-### https://user-auth-service-poyz.onrender.com/user/me
-This API will display details of the user on if an auth token is valid.
-
-### You can test all these live APIs at 
-https://user-auth-service-poyz.onrender.com/swagger-ui/index.html#/Authentication/login
+https://user-auth-service-poyz.onrender.com/swagger-ui/index.html
 
 ## Getting Started
 To Run this project locally, follow below steps
 
-- git clone ...
+git clone https://github.com/tahazakir110/user-auth-service.git
 
-- cd user-auth-service
+cd user-auth-service
 
-- Configure Environment Variables
-
-- mvn spring-boot:run
+mvn spring-boot:run
 
 ## Environment Variables
 | Variable       | Description             |
@@ -85,18 +105,14 @@ To Run this project locally, follow below steps
 
 ## Future Improvements
 - Refresh Tokens
-
-- Docker
-
 - CI/CD Pipeline
-
 - Role-Based Authorization
-
 - Unit Testing
-
 - Integration Testing
-
 - API Rate Limiting
+
+## License
+This project is licensed under the MIT License.
 
 ### Author
 Developed by Taha Zakir
